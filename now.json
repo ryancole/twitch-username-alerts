@@ -1,0 +1,6 @@
+{
+  "env": {
+    "TWITCH_CLIENT_ID": "@twitch-username-alerts-client-id",
+	"TWITCH_CLIENT_SECRET": "@twitch-username-alerts-client-secret"
+  }
+}

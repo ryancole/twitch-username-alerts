@@ -1,0 +1,15 @@
+{
+  "name": "twitch-username-alerts",
+  "version": "0.0.1",
+  "description": "Alert when usernames, on twitch, become available",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "got": "^9.2.1"
+  },
+  "devDependencies": {
+    "now": "^11.4.2"
+  }
+}
