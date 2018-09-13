@@ -1,6 +1,9 @@
 {
   "env": {
-    "TWITCH_CLIENT_ID": "@twitch-username-alerts-client-id",
-	"TWITCH_CLIENT_SECRET": "@twitch-username-alerts-client-secret"
+    "TWILIO_TO": "@twitch-username-alerts-twilio-to",
+    "TWILIO_SID": "@twitch-username-alerts-twilio-sid",
+    "TWILIO_FROM": "@twitch-username-alerts-twilio-from",
+    "TWILIO_TOKEN": "@twitch-username-alerts-twilio-token",
+    "TWITCH_CLIENT_ID": "@twitch-username-alerts-twitch-client-id"
   }
 }

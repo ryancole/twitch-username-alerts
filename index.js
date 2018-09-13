@@ -1,3 +1,4 @@
+const fs = require("fs");
 const got = require("got");
 const twilio = require("twilio");
 
@@ -42,6 +43,8 @@ async function performCheck() {
 	  .catch(err => console.log(err))
 	  .done();
   }
+
+  fs.writeFileSync("last-check.json", JSON.stringify({ lastCheck: Date() }));
 }
 
 setInterval(performCheck, 10000);
