@@ -32,9 +32,13 @@ async function isUsernameAvailable(username) {
 }
 
 async function performCheck() {
+  console.log("Performing availability check ...");
+
   const queries = usernames.map(u => isUsernameAvailable(u));
   const results = await Promise.all(queries);
   const available = results.filter(m => m.available).map(m => m.username);
+
+  console.log(results);
 
   if (available.length > 0) {
     twilioClient
@@ -43,8 +47,6 @@ async function performCheck() {
 	  .catch(err => console.log(err))
 	  .done();
   }
-
-  fs.writeFileSync("last-check.json", JSON.stringify({ lastCheck: Date() }));
 }
 
-setInterval(performCheck, 10000);
+setInterval(performCheck, 60000);
