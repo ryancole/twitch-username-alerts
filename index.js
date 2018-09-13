@@ -7,6 +7,10 @@ const { usernames } = require("./usernames.json");
 // init twilio client
 const twilioClient = twilio(process.env["TWILIO_SID"], process.env["TWILIO_TOKEN"]);
 
+function log(message) {
+  console.log(`[${Date()}] ${message}`);
+}
+
 async function isUsernameAvailable(username) {
   let available = false;
 
@@ -31,13 +35,13 @@ async function isUsernameAvailable(username) {
 }
 
 async function performCheck() {
-  console.log("Performing availability check ...");
+  log("Performing availability check ...");
 
   const queries = usernames.map(u => isUsernameAvailable(u));
   const results = await Promise.all(queries);
   const available = results.filter(m => m.available).map(m => m.username);
 
-  console.log(results);
+  log(results);
 
   if (available.length > 0) {
     twilioClient
@@ -49,5 +53,3 @@ async function performCheck() {
 }
 
 setInterval(performCheck, 60000);
-
-module.exports = () => "twitch username alerts";
