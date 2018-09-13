@@ -4,10 +4,11 @@
   "description": "Alert when usernames, on twitch, become available",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "micro"
   },
   "dependencies": {
     "got": "^9.2.1",
+    "micro": "^9.3.3",
     "twilio": "^3.19.2"
   },
   "devDependencies": {

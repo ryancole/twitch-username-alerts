@@ -1,4 +1,3 @@
-const fs = require("fs");
 const got = require("got");
 const twilio = require("twilio");
 
@@ -50,3 +49,5 @@ async function performCheck() {
 }
 
 setInterval(performCheck, 60000);
+
+module.exports = () => "twitch username alerts";
