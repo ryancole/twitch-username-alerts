@@ -41,7 +41,7 @@ async function performCheck() {
   const results = await Promise.all(queries);
   const available = results.filter(m => m.available).map(m => m.username);
 
-  log(results);
+  log(JSON.stringify(results));
 
   if (available.length > 0) {
     twilioClient
